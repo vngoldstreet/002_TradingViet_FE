@@ -1,0 +1,24 @@
+<div id="chat-component">
+    <div id="chat-body" class="border border-opacity-50 rounded-top">
+        <div *ngFor="let item of chat_history" class="chat chat-start ms-1 me-1">
+            <div class="chat-header">
+                {{item.username}}
+                <time class="text-xs opacity-50">{{item.time | date:'short'}}</time>
+            </div>
+            <div class="chat-bubble">{{item.content}}</div>
+        </div>
+    </div>
+    <div id="chat-text">
+        <div class="input-group mb-3 border-opacity-50 rounded-end">
+            <input type="text" class="form-control config-border" [(ngModel)]="message" placeholder="Viết gì đó...">
+            <button (click)="SendMessage()" class="btn btn-outline-danger config-button-border" type="button"
+                id="button-addon2">Gửi
+                đi</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    var objDiv = document.getElementById("chat-body");
+    objDiv.scrollTop = objDiv.scrollHeight
+</script>

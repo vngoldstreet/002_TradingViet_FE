@@ -1,0 +1,57 @@
+#carouselExampleCaptions img {
+    max-height: 600px;
+    height: max-content;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+div.carousel-area {
+    position: relative;
+}
+
+div.card-area {
+    position: absolute;
+
+}
+
+.title {
+    font-size: 2rem;
+    color: rgb(0, 119, 119);
+}
+
+.med-color {
+    color: rgb(0, 119, 119);
+}
+
+.border-med {
+    border: 2px solid #F38121;
+}
+
+.bg-med {
+    background-color: #f38021c9;
+}
+
+span.bg-med {
+    color: aliceblue;
+}
+
+button.example-custom-date-class {
+    background: #F38121;
+    border-radius: 100%;
+}
+
+.btn-warning-bs {
+    background: #F38121;
+    color: aliceblue;
+}
+
+.carousel-caption {
+    bottom: 30% !important;
+}
+
+
+@media screen and (max-device-width: 800px) {
+    #carouselExampleCaptions img {
+        min-height: 200px !important;
+    }
+}

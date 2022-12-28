@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;
+}
+
+.text-small {
+    font-size: 14px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.active{
+    color: red !important;
+    font-size: 20px;
+}

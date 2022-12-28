@@ -1,0 +1,15 @@
+#fast-news{
+    /* height: 600px; */
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+ul,li{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text-justify{
+    text-align: justify;
+}

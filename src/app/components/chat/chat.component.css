@@ -1,0 +1,29 @@
+#chat-body{
+    overflow: hidden;
+    overflow-y:auto;
+    border-bottom: 0 !important;
+    height: 550px;
+}
+
+#chat-component{
+    height: 600px;
+    min-height: 600px !important;
+}
+
+#chat-text{
+    height: 50px;
+}
+
+ul, li {
+    list-style-type: none;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+.config-border{
+    border-top-left-radius:0 !important;
+}
+
+.config-button-border{
+    border-top-right-radius:0 !important;
+}
