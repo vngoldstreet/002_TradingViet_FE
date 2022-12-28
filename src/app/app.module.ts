@@ -9,6 +9,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { FastNewsComponent } from './components/fast-news/fast-news.component';
 import { FormsModule } from '@angular/forms';
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbPaginationModule, 
+    NgbAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

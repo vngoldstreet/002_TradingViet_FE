@@ -10,7 +10,7 @@ ul {
     list-style-type: none;
 }
 
-.active{
-    color: red !important;
-    font-size: 20px;
+a.active {
+    color: rgb(13, 110, 253) !important;
+    font-weight: 500;
 }
