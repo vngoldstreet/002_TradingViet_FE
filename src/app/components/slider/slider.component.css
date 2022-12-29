@@ -1,5 +1,5 @@
 #carouselExampleCaptions img {
-    max-height: 600px;
+    max-height: 400px;
     height: max-content;
     overflow: hidden;
     object-fit: cover;

@@ -12,5 +12,5 @@ ul {
 
 a.active {
     color: rgb(13, 110, 253) !important;
-    font-weight: 500;
+    /* font-weight: 500; */
 }

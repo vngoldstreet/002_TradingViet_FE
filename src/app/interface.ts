@@ -8,17 +8,26 @@ export interface Sliders {
 export interface Chats {
     username: string
     content: string
-    time:string
+    time: string
 }
 
 export interface News {
     title: string
     content: string
     time: string
+    status: boolean
 }
 
 export interface Menus {
     title: string
     link: string
+}
+export interface ExpertAdvisor {
+    status:boolean
+    name: string
+    balance: number
+    equity: number
+    profit: number
+    live_profit: number
 }
 

@@ -15,27 +15,23 @@ export class HeaderComponent implements OnInit {
   hotnews !: string | null
   menus : Array<Menus> = [
     {
-      title:"Home",
+      title:"Trang chủ",
       link:"#",
     },
     {
-      title:"About Us",
+      title:"Giới thiệu",
       link:"#",
     },
     {
-      title:"Blog",
+      title:"Tin tức",
       link:"#",
     },
     {
-      title:"Services",
+      title:"Kiến thức",
       link:"#",
     },
     {
-      title:"Products",
-      link:"#",
-    },
-    {
-      title:"Contact",
+      title:"Liên hệ",
       link:"#",
     },
   ]

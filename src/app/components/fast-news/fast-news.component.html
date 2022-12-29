@@ -1,11 +1,17 @@
-<div id="fast-news">
-    <h2 class="fs-4">Tin tức cập nhật</h2>
+<div id="fast-news" class="">
+    
+    <h2 class="fs-4 py-2">
+        <i class="far fa-paper-plane"></i>
+        Tin tức cập nhật <br>
+        <span class="fs-8 fw-lighter">Cập nhật, phân tích các tin tức trực tiếp ảnh hưởng tới thị trường Vàng, ngoại tệ,...</span>
+    </h2>
+    
     <div class="content-new">
         <ul>
-            <li class="mt-2 mb-2" *ngFor="let item of fast_news">
-                <h2 class="fs-6 lh-lg m-0 p-0 text-justify fw-semibold"><i class="far fa-bell me-2"></i>{{item.title | slice:0:80}}{{item.title.length>80?'...':''}}</h2>
-                <span class="m-0 p-0 fw-light">{{item.time | date:'dd/M/YYYY HH:mm'}}: <span class="text-justify">{{item.content | slice:0:160}}{{item.content.length>160?'...':''}}</span></span>
-                <p class="p-0 m-0 "></p>
+            <li (click)="item.status=!item.status" class="{{item.status?'text-danger':''}} py-2 {{i + 1 < fast_news.length?'border-bottom':''}}" *ngFor="let item of fast_news;index as i">
+                <h2 class="fs-6 lh-lg m-0 p-0 fw-normal text-primary-emphasis"><i class="far fa-bell me-2"></i>{{item.title | slice:0:80}}{{item.title.length>80?'...':''}}</h2>
+                <span *ngIf="!item.status" class="m-0 p-0 fw-light fs-8">{{item.time | date:'dd/M/YYYY HH:mm'}}: <span class="text-justify">{{item.content | slice:0:160}}{{item.content.length>160?'...':''}}</span></span>
+                <span *ngIf="item.status" class="m-0 p-0 fw-light fs-8">{{item.time | date:'dd/M/YYYY HH:mm'}}: <span class="text-justify">{{item.content}}</span></span>
             </li>
         </ul>
     </div>

@@ -1,0 +1,66 @@
+#ea-news {
+    max-height: 700px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+i.fa-robot {
+    animation: mymove2 1s infinite;
+}
+
+@keyframes mymove2 {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: rgb(255, 255, 255);
+    }
+
+    100% {
+        color: blue;
+    }
+}
+
+li{
+    cursor: pointer;
+}
+
+.text-online{
+    animation: online 1s infinite;
+}
+.text-offline{
+    animation: offline 1s infinite;
+}
+
+@keyframes online {
+    100% {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 125, 50);
+    }
+    0% {
+        background-color: rgb(0, 125, 50);
+        color: rgb(255, 255, 255);
+    }
+}
+
+@keyframes offline {
+    100% {
+        background-color: rgb(255, 255, 255);
+        color: rgb(255, 0, 0);
+    }
+    0% {
+        background-color: rgb(255, 0, 0);
+        color: rgb(255, 255, 255);
+    }
+}

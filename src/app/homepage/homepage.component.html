@@ -1,13 +1,21 @@
-<app-header></app-header>
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-lg-4 mt-3 ms-0 ps-0">
-        </div>
-        <div class="col-lg-4 mt-3 ms-0 ps-0">
+<div class="container pt-3 cssanimation fadeIn sequence">
+    <app-popular-news></app-popular-news>
+</div>
 
+<div class="container mt-3 cssanimation fadeIn sequence">
+    <div class="row">
+        <div class="col-lg-4 mt-2 pe-3">
+            <app-fast-news></app-fast-news>
         </div>
-        <div class="col-lg-4 mt-3 ms-0 ps-0">
-            <!-- <app-fast-news></app-fast-news> -->
+        <div class="col-lg-8 mt-2 ps-3">
+            <app-top-ea></app-top-ea>
+            <div class="row">
+                <div class="col-lg-6">
+                    <app-chart-fed></app-chart-fed>
+                </div>
+                <div class="col-lg-6"></div>
+            </div>
         </div>
+
     </div>
 </div>
