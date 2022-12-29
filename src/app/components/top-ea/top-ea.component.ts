@@ -16,7 +16,7 @@ export class TopEaComponent implements OnInit {
   robots : Array<ExpertAdvisor> = [
     {
       status: true,
-      name:"001_AUDNZD_Hedging",
+      name:"Hedging",
       balance:1000,
       equity:1150.21,
       profit:124.45,
@@ -24,7 +24,7 @@ export class TopEaComponent implements OnInit {
     },
     {
       status: false,
-      name:"002_NZDAUD_Hedging",
+      name:"Hedging",
       balance:1000,
       equity:1150.21,
       profit:124.45,
@@ -32,7 +32,7 @@ export class TopEaComponent implements OnInit {
     },
     {
       status: true,
-      name:"001_AUDNZD_Hedging",
+      name:"Hedging",
       balance:1000,
       equity:1150.21,
       profit:124.45,
@@ -40,7 +40,7 @@ export class TopEaComponent implements OnInit {
     },
     {
       status: false,
-      name:"002_NZDAUD_Hedging",
+      name:"Hedging",
       balance:1000,
       equity:1150.21,
       profit:124.45,
@@ -48,7 +48,7 @@ export class TopEaComponent implements OnInit {
     },
     {
       status: false,
-      name:"002_NZDAUD_Hedging",
+      name:"Hedging",
       balance:1000,
       equity:1150.21,
       profit:124.45,

@@ -22,6 +22,7 @@ export interface Menus {
     title: string
     link: string
 }
+
 export interface ExpertAdvisor {
     status:boolean
     name: string
@@ -31,3 +32,9 @@ export interface ExpertAdvisor {
     live_profit: number
 }
 
+
+export interface ImageShows {
+    title: string
+    src: string
+
+}

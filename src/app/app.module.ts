@@ -14,6 +14,9 @@ import { PopularNewsComponent } from './components/popular-news/popular-news.com
 import { TopEaComponent } from './components/top-ea/top-ea.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChartFedComponent } from './components/chart-fed/chart-fed.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ChartCotComponent } from './components/chart-cot/chart-cot.component';
+
 
 @NgModule({
   declarations: [
@@ -26,14 +29,16 @@ import { ChartFedComponent } from './components/chart-fed/chart-fed.component';
     PopularNewsComponent,
     TopEaComponent,
     FooterComponent,
-    ChartFedComponent
+    ChartFedComponent,
+    ChartCotComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbPaginationModule, 
-    NgbAlertModule
+    NgbAlertModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

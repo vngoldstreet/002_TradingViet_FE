@@ -1,7 +1,29 @@
 <div id="ea-news" class="">
     <h2 class="fs-4 py-2">
-        <i class="fas fa-chart-line"></i>
-        Dữ liệu Fed-Watch
-        <span class="fs-8 fw-lighter">Cập nhật tỉ lệ đặt cược cho việc tăng lãi suất của FED</span>
+        <i class="fas fa-chart-line"></i> Dữ liệu Fed-Watch
+        <span class="fs-8 fw-lighter">Cập nhật dữ liệu kinh tế nhanh và chính xác nhất</span>
     </h2>
+    <a href="{{localurl}}/{{image.src}}" target="_blank" rel="noopener noreferrer">
+        <img class="w-100" src="{{image.src}}" alt="{{image.title}}">
+    </a>
+    <div class="row">
+        <div class="col-lg-6">
+            <div style="text-align:center">
+                <apx-chart [series]="series" [chart]="chart" [xaxis]="xaxis" [title]="title"></apx-chart>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div style="text-align:center">
+                <apx-chart [series]="series_2" [chart]="chart_2" [xaxis]="xaxis_2" [yaxis]="yaxis_2" [title]="title_2" [stroke]="strock_2" [dataLabels]="dataLabels_2"></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg-12">
+
+        </div>
+        <div class="col-lg-12">
+
+        </div>
+    </div>
 </div>
