@@ -16,7 +16,8 @@ import { ChartFedComponent } from './components/chart-fed/chart-fed.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { ChartCotComponent } from './components/chart-cot/chart-cot.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { BankRateComponent } from './components/bank-rate/bank-rate.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,15 @@ import { OpinionComponent } from './components/opinion/opinion.component';
     FooterComponent,
     ChartFedComponent,
     ChartCotComponent,
-    OpinionComponent
+    OpinionComponent,
+    BankRateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgApexchartsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

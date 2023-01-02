@@ -12,14 +12,22 @@
             <div class="row g-3">
                 <div class="col-sm-12">
                     <label for="firstName" class="form-label">Tên của bạn</label>
-                    <input type="text" class="form-control" id="yourname" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="yourname" placeholder="Nhập rõ tên của bạn" value="" required>
+                    <div class="invalid-feedback">
+                        Valid name is required.
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <label for="phone" class="form-label">Số điện thoại</label>
+                    <input type="number" class="form-control" id="phone" placeholder="Số điện thoại liên hệ" value="" required>
                     <div class="invalid-feedback">
                         Valid name is required.
                     </div>
                 </div>
 
                 <div class="col-12">
-                    <label for="email" class="form-label">Địa chỉ email <span class="text-muted">(Optional)</span></label>
+                    <label for="email" class="form-label">Địa chỉ email</label>
                     <input type="email" class="form-control" id="email" placeholder="you@example.com">
                     <div class="invalid-feedback">
                         Please enter a valid email address for shipping updates.
@@ -28,18 +36,13 @@
 
                 <div class="col-12">
                     <label for="address" class="form-label">Mô tả chi tiết:</label>
-                    <textarea class="form-control" aria-label="With textarea" id="desc"></textarea>
+                    <textarea class="form-control" placeholder="Nhập rõ mô tả càng chi tiết càng tốt. Đường link driver file mô tả (nếu có)" aria-label="With textarea" id="desc"></textarea>
                     <div class="invalid-feedback">
                         Please enter your mind.
                     </div>
                 </div>
-
-                <div class="col-12">
-                    <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-                    <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                </div>
             </div>
-            <button class="w-100 btn btn-primary btn-sm mt-2" type="submit">Continue to checkout</button>
+            <button class="w-100 btn btn-primary btn-sm mt-2" type="submit">Gửi đi</button>
         </form>
     </div>
 </div>

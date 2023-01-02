@@ -1,0 +1,28 @@
+<div id="bankrate-news" class="">
+    <h2 class="fs-4 py-2">
+        <i class="fas fa-chart-line"></i> Thống kê lãi suất NHTW
+        <span class="fs-8 fw-lighter">Cập nhật trực tiếp lãi suất các ngân hàng trung ương trên thế giới</span>
+    </h2>
+    <table class="table table-responsive table-hover table-borderless table-sm">
+        <thead>
+            <tr class="fs-8">
+                <th scope="col">
+                    Name
+                </th>
+                <th scope="col">Current</th>
+                <th scope="col">Previous</th>
+                <th scope="col">Change</th>
+            </tr>
+        </thead>
+        <tbody class="fs-9">
+            <tr *ngFor="let item of datas;index as i">
+                <td>{{item.name}}<br>
+                    <span class="fw-lighter ms-1">{{item.friendly}}</span>
+                </td>
+                <td class="{{item.current>=item.previous?'text-primary':'text-danger'}}">{{item.current | number:'0.2-2'}}%</td>
+                <td class="{{item.current>=item.previous?'text-primary':'text-danger'}}">{{item.previous | number:'0.2-2'}}%</td>
+                <td>{{item.date | date:'dd/MM/YYYY'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

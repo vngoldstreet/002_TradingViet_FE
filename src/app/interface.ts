@@ -24,7 +24,7 @@ export interface Menus {
 }
 
 export interface ExpertAdvisor {
-    status:boolean
+    status: boolean
     name: string
     balance: number
     equity: number
@@ -36,5 +36,29 @@ export interface ExpertAdvisor {
 export interface ImageShows {
     title: string
     src: string
+}
+
+export interface BankRates {
+    name: string
+    friendly: string
+    current: number
+    previous: number
+    date: string
+}
+
+export interface ChartDatas {
+    categories: Array<string>
+    long: Array<string>
+    short: Array<string>
+    title: string
+}
+
+export interface FedWatch {
+    current: string
+    categories: Array<string>
+    now: Array<number>
+    oneday: Array<number>
+    oneweek: Array<number>
+    onemonth: Array<number>
 
 }
