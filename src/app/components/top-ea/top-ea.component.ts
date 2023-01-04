@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExpertAdvisor, News } from 'src/app/interface';
+import { WebsocketService } from 'src/app/websocket.service';
 
 @Component({
   selector: 'app-top-ea',
@@ -8,51 +9,22 @@ import { ExpertAdvisor, News } from 'src/app/interface';
 })
 export class TopEaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private webSocketService: WebsocketService) { }
 
   ngOnInit(): void {
+    this.getPrices()
   }
 
-  robots : Array<ExpertAdvisor> = [
-    {
-      status: true,
-      name:"Hedging",
-      balance:1000,
-      equity:1150.21,
-      profit:124.45,
-      live_profit:-5.35,
-    },
-    {
-      status: false,
-      name:"Hedging",
-      balance:1000,
-      equity:1150.21,
-      profit:124.45,
-      live_profit:5.35,
-    },
-    {
-      status: true,
-      name:"Hedging",
-      balance:1000,
-      equity:1150.21,
-      profit:124.45,
-      live_profit:-5.35,
-    },
-    {
-      status: false,
-      name:"Hedging",
-      balance:1000,
-      equity:1150.21,
-      profit:124.45,
-      live_profit:-5.35,
-    },
-    {
-      status: false,
-      name:"Hedging",
-      balance:1000,
-      equity:1150.21,
-      profit:124.45,
-      live_profit:-5.35,
-    },
-  ]
+  getPrices() {
+    let url = "ws://localhost:8080/ws"
+    this.webSocketService.connect(url)
+      .subscribe(evt => {
+        let jsonObj = JSON.parse(evt.data)
+        // console.log(jsonObj)
+        this.robots = jsonObj
+      });
+  }
+
+  robots: Array<ExpertAdvisor> = []
+
 }

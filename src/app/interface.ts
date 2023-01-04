@@ -24,12 +24,12 @@ export interface Menus {
 }
 
 export interface ExpertAdvisor {
-    status: boolean
-    name: string
     balance: number
     equity: number
-    profit: number
-    live_profit: number
+    pos_profit: number
+    his_profit: number
+    per_profit: number
+    id: number
 }
 
 

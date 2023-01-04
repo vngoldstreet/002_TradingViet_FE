@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL:"http://localhost:8080/",
-  getChartDatas:"getchart",
-  getFedWatch:"fedwatch",
-  getBankRate:"bankrate",
+  apiURL: "http://localhost:8081/",
+  getChartDatas: "getchart",
+  getFedWatch: "fedwatch",
+  getBankRate: "bankrate",
 };

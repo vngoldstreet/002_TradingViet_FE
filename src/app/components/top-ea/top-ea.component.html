@@ -1,7 +1,8 @@
 <div id="ea-news" class="">
 
     <h2 class="fs-4 py-2">
-        <i class="fas fa-robot"></i> Robot giao dịch (Expert Advisor) - <a href="http://" target="_blank" rel="noopener noreferrer">Sàn FXLink</a>
+        <i class="fas fa-robot"></i> Robot giao dịch (Expert Advisor) - <a href="http://" target="_blank"
+            rel="noopener noreferrer">Sàn FXLink</a>
         <br>
         <span class="fs-8 fw-lighter">Tổng hợp các robot giao dịch được TradingViet phát triển và chạy live trên sàn
             giao dịch FxLink!</span>
@@ -11,21 +12,27 @@
             <thead>
                 <th class="fs-6 fw-normal text-center" scope="col">#</th>
                 <th class="fs-6 fw-normal text-center" scope="col">Status</th>
-                <th class="fs-6 fw-normal text-start" scope="col">Name</th>
+                <!-- <th class="fs-6 fw-normal text-start" scope="col">Name</th> -->
                 <th class="fs-6 fw-normal text-end" scope="col">Balance</th>
                 <th class="fs-6 fw-normal text-end" scope="col">Equity</th>
+                <th class="fs-6 fw-normal text-end" scope="col">PnL</th>
                 <th class="fs-6 fw-normal text-end" scope="col">Profit</th>
-                <th class="fs-6 fw-normal text-end" scope="col">Current</th>
             </thead>
             <tbody>
                 <tr class="fs-7 fw-normal" *ngFor="let item of robots;index as i">
-                    <td class="fs-8 text-center {{item.profit>0?'text-success':'text-danger'}}">{{i+1}}</td>
-                    <td class="fs-8 text-center"><span class="p-1 rounded {{item.status?'text-online':'text-offline'}}">{{item.status?'online':'offline'}}</span></td>
-                    <td class="fs-8 text-start {{item.profit>0?'text-success':'text-danger'}}">{{item.name}}</td>
-                    <td class="fs-8 text-end {{item.profit>0?'text-success':'text-danger'}}">{{item.balance}}</td>
-                    <td class="fs-8 text-end {{item.profit>0?'text-success':'text-danger'}}">{{item.equity}}</td>
-                    <td class="fs-8 text-end {{item.profit>0?'text-success':'text-danger'}}">{{item.profit}}</td>
-                    <td class="fs-8 text-end {{item.live_profit>0?'text-success':'text-danger'}}">{{item.live_profit}}</td>
+                    <td class="fs-8 text-center {{item.his_profit>0?'text-success':'text-danger'}}">{{i+1}}</td>
+                    <td class="fs-8 text-center"><span
+                            class="{{item.his_profit>0?'text-success':'text-danger'}}">online</span></td>
+                    <td class="fs-8 text-end {{item.his_profit>0?'text-success':'text-danger'}}">${{item.balance|
+                        number:'0.0-2'}}</td>
+                    <td class="fs-8 text-end {{item.his_profit>0?'text-success':'text-danger'}}">${{item.equity|
+                        number:'0.0-2'}}</td>
+                    <td class="fs-8 text-end {{item.pos_profit>0?'text-success':'text-danger'}}">${{item.pos_profit|
+                        number:'0.0-2'}}
+                    </td>
+                    <td class="fs-8 text-end {{item.per_profit>0?'text-success':'text-danger'}}">{{item.per_profit |
+                        number:'0.0-2'}}%
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -18,6 +18,7 @@ import { ChartCotComponent } from './components/chart-cot/chart-cot.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BankRateComponent } from './components/bank-rate/bank-rate.component';
+import { WebsocketService } from './websocket.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { BankRateComponent } from './components/bank-rate/bank-rate.component';
     NgApexchartsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [WebsocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
