@@ -48,9 +48,11 @@ export interface BankRates {
 
 export interface ChartDatas {
     categories: Array<string>
-    long: Array<string>
-    short: Array<string>
-    title: string
+    long_all: Array<string>
+    short_all: Array<string>
+    long_change: Array<string>
+    short_change: Array<string>
+    name: string
 }
 
 export interface FedWatch {
