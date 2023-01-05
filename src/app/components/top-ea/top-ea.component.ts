@@ -16,7 +16,7 @@ export class TopEaComponent implements OnInit {
   }
 
   getPrices() {
-    let url = "ws://localhost:8080/ws"
+    let url = "wss://portal-mql.tradingviet.com/ws"
     this.webSocketService.connect(url)
       .subscribe(evt => {
         let jsonObj = JSON.parse(evt.data)

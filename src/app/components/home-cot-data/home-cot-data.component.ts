@@ -40,7 +40,6 @@ export class HomeCotDataComponent implements OnInit {
     http.get<any>(environment.apiURL + environment.getChartDatas).subscribe(
       (res) => {
         this.datas = res.data;
-
         this.chartGoldOptions = {
           series: [
             {
@@ -73,10 +72,10 @@ export class HomeCotDataComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[0].name,
+            text: this.datas[0].name + " Updated: " + this.datas[0].categories[this.datas[0].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -131,10 +130,10 @@ export class HomeCotDataComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[8].name,
+            text: this.datas[8].name + " Updated: " + this.datas[8].categories[this.datas[8].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -189,10 +188,10 @@ export class HomeCotDataComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[9].name,
+            text: this.datas[9].name + " Updated: " + this.datas[9].categories[this.datas[9].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -219,7 +218,7 @@ export class HomeCotDataComponent implements OnInit {
         console.log(error);
       }
     );
-   }
+  }
 
   ngOnInit(): void {
   }

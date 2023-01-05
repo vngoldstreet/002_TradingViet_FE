@@ -1,12 +1,13 @@
 <div id="ea-news" class="">
 
     <h2 class="fs-4 py-2">
-        <i class="fas fa-robot"></i> Robot giao dịch (Expert Advisor) - <a href="http://" target="_blank" rel="noopener noreferrer">Sàn FXLink</a>
+        <i class="fas fa-robot"></i> Robot giao dịch (Expert Advisor) - <a href="http://" target="_blank"
+            rel="noopener noreferrer">Sàn FXLink</a>
         <div class="mt-2">
             <span class="fs-8 fw-lighter">Tổng hợp các robot giao dịch được TradingViet phát triển và chạy live trên sàn
-            giao dịch FxLink!
-            <br>Vui lòng liên hệ Telegram @tradingviet để được hỗ trợ
-        </span>
+                giao dịch FxLink!
+                <br>Vui lòng liên hệ Telegram @tradingviet để được hỗ trợ
+            </span>
         </div>
     </h2>
     <div class="table-responsive">
@@ -23,14 +24,19 @@
             <tbody>
                 <tr class="fs-7 fw-normal" *ngFor="let item of robots;index as i">
                     <td class="fs-8 text-center {{item.his_profit>0?'text-success':'text-danger'}}">{{i+1}}</td>
-                    <td class="fs-8 text-center"><span class="{{item.his_profit>0?'text-success':'text-danger'}}">online</span></td>
-                    <td class="fs-8 text-end {{item.his_profit>0?'text-success':'text-danger'}}">${{item.balance| number:'0.0-2'}}
+                    <td class="fs-8 text-center"><span
+                            class="{{item.his_profit>0?'text-success':'text-danger'}}">online</span></td>
+                    <td class="fs-8 text-end {{item.his_profit>0?'text-success':'text-danger'}}">${{item.balance|
+                        number:'0.0-2'}}
                     </td>
-                    <td class="fs-8 text-end {{item.his_profit>0?'text-success':'text-danger'}}">${{item.equity| number:'0.0-2'}}
+                    <td class="fs-8 text-end {{item.his_profit>0?'text-success':'text-danger'}}">${{item.equity|
+                        number:'0.0-2'}}
                     </td>
-                    <td class="fs-8 text-end {{item.pos_profit>0?'text-success':'text-danger'}}">${{item.pos_profit| number:'0.0-2'}}
+                    <td class="fs-8 text-end {{item.pos_profit>0?'text-success':'text-danger'}}">${{item.pos_profit|
+                        number:'0.0-2'}}
                     </td>
-                    <td class="fs-8 text-end {{item.per_profit>0?'text-success':'text-danger'}}">{{item.per_profit | number:'0.0-2'}}%
+                    <td class="fs-8 text-end {{item.per_profit>0?'text-success':'text-danger'}}">{{item.per_profit |
+                        number:'0.0-2'}}%
                     </td>
                 </tr>
             </tbody>
@@ -38,18 +44,20 @@
     </div>
 
     <h2 class="fs-4 py-2">
-        <i class="fas fa-robot"></i> Cảnh báo từ Indicators - <a href="http://" target="_blank" rel="noopener noreferrer">Sàn FXLink</a>
+        <i class="fas fa-robot"></i> Cảnh báo từ Indicators
         <div class="">
-            <span class="fs-8 fw-lighter">Tự động phân tích tín hiệu từ Indicators mang lại cơ hội giao dịch
-        </span>
+            <span class="fs-8 fw-lighter">Tự động phân tích tín hiệu từ Indicators mang lại cơ hội giao dịch (Đang phát
+                triển)
+            </span>
         </div>
     </h2>
     <div class="table-responsive">
-        <table class="table table-sm table-borderless">
+
+        <!-- <table class="table table-sm table-borderless">
             <thead>
                 <th class="fs-6 fw-normal text-center" scope="col">#</th>
                 <th class="fs-6 fw-normal text-center" scope="col">Status</th>
-                <!-- <th class="fs-6 fw-normal text-start" scope="col">Name</th> -->
+                <th class="fs-6 fw-normal text-start" scope="col">Name</th>
                 <th class="fs-6 fw-normal text-end" scope="col">Balance</th>
                 <th class="fs-6 fw-normal text-end" scope="col">Equity</th>
                 <th class="fs-6 fw-normal text-end" scope="col">PnL</th>
@@ -69,6 +77,6 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </div>
 </div>

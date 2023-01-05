@@ -51,7 +51,6 @@ export class ChartCotComponent implements OnInit {
     http.get<any>(environment.apiURL + environment.getChartDatas).subscribe(
       (res) => {
         this.datas = res.data;
-
         this.chartGoldOptions = {
           series: [
             {
@@ -84,10 +83,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[0].name,
+            text: this.datas[0].name + " Updated: " + this.datas[0].categories[this.datas[0].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -142,10 +141,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[1].name,
+            text: this.datas[1].name + " Updated: " + this.datas[1].categories[this.datas[1].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -200,10 +199,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[2].name,
+            text: this.datas[2].name + " Updated: " + this.datas[2].categories[this.datas[2].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -258,10 +257,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: 'COT-AUD',
+            text: this.datas[3].name + " Updated: " + this.datas[3].categories[this.datas[3].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -316,10 +315,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[4].name,
+            text: this.datas[4].name + " Updated: " + this.datas[4].categories[this.datas[4].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -374,10 +373,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[5].name,
+            text: this.datas[5].name + " Updated: " + this.datas[5].categories[this.datas[5].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -432,10 +431,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[6].name,
+            text: this.datas[6].name + " Updated: " + this.datas[6].categories[this.datas[6].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -490,10 +489,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[8].name,
+            text: this.datas[8].name + " Updated: " + this.datas[8].categories[this.datas[8].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -548,10 +547,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[7].name,
+            text: this.datas[7].name + " Updated: " + this.datas[7].categories[this.datas[7].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -606,10 +605,10 @@ export class ChartCotComponent implements OnInit {
           },
           strock: {
             curve: 'stepline',
-            width: [1, 1,2,2],
+            width: [1, 1, 2, 2],
           },
           title: {
-            text: this.datas[9].name,
+            text: this.datas[9].name + " Updated: " + this.datas[9].categories[this.datas[9].categories.length - 1],
             style: {
               fontFamily: 'Roboto',
             },
@@ -638,5 +637,5 @@ export class ChartCotComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

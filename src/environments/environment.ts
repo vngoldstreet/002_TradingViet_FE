@@ -4,12 +4,12 @@
 
 export const environment = {
   production: false,
-  apiURL: "http://localhost:8081/",
+  apiURL: "https://portal-data.tradingviet.com/public/",
   getChartDatas: "getchart",
   getFedWatch: "fedwatch",
   getBankRate: "bankrate",
 
-  apiUrlG:'https://api.bacsiungthu.net',
+  apiUrlG: 'https://api.bacsiungthu.net',
   apiGetListData: '/api/bsut/getlistdata',
   apiGetSlider: '/api/bsut/slider',
   apiGetImage: '/api/bsut/image/',
