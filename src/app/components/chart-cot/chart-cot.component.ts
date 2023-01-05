@@ -30,6 +30,7 @@ export type ChartOptions = {
   templateUrl: './chart-cot.component.html',
   styleUrls: ['./chart-cot.component.css'],
 })
+
 export class ChartCotComponent implements OnInit {
   public chartGoldOptions: Partial<ChartOptions> | any;
   public chartUSDOptions: Partial<ChartOptions> | any;
@@ -40,6 +41,9 @@ export class ChartCotComponent implements OnInit {
   public chartCOTJPY: Partial<ChartOptions> | any;
   public chartCOTCAD: Partial<ChartOptions> | any;
   public chartCOTCHF: Partial<ChartOptions> | any;
+  public chartCOTUSD: Partial<ChartOptions> | any;
+  public chartCOTNZD: Partial<ChartOptions> | any;
+  public chartCOTVIX: Partial<ChartOptions> | any;
 
   public datas: Array<ChartDatas> = [];
 
@@ -47,6 +51,7 @@ export class ChartCotComponent implements OnInit {
     http.get<any>(environment.apiURL + environment.getChartDatas).subscribe(
       (res) => {
         this.datas = res.data;
+
         this.chartGoldOptions = {
           series: [
             {
@@ -104,50 +109,6 @@ export class ChartCotComponent implements OnInit {
             show: true,
           },
         };
-
-        // this.chartUSDOptions = {
-        //   series: [
-        //     {
-        //       name: 'USD Position',
-        //       data: this.datas[1].long,
-        //       color: '#8000ff',
-        //     },
-        //   ],
-        //   chart: {
-        //     height: 350,
-        //     type: 'bar',
-        //     zoom: {
-        //       enabled: false,
-        //     },
-        //   },
-        //   strock: {
-        //     curve: 'straight',
-        //     width: 1,
-        //   },
-        //   title: {
-        //     text: this.datas[1].title,
-        //     style: {
-        //       fontFamily: 'Roboto',
-        //     },
-        //   },
-        //   xaxis: {
-        //     sorted: true,
-        //     categories: this.datas[1].categories,
-        //     labels: {
-        //       show: true,
-        //       rotateAlways: false,
-        //       style: {
-        //         fontSize: '10',
-        //       },
-        //     },
-        //   },
-        //   dataLabels: {
-        //     enabled: false,
-        //   },
-        //   legend:{
-        //     show: false
-        //   }
-        // };
 
         this.chartCOTEUR = {
           series: [
@@ -482,6 +443,180 @@ export class ChartCotComponent implements OnInit {
           xaxis: {
             sorted: true,
             categories: this.datas[6].categories,
+            labels: {
+              show: true,
+              style: {
+                fontSize: '10',
+              },
+            },
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          legend: {
+            show: true,
+          },
+        };
+
+        this.chartCOTUSD = {
+          series: [
+            {
+              name: 'Long Position',
+              data: this.datas[8].long_change,
+              color: '#0099ff',
+              type: 'column'
+            },
+            {
+              name: 'Short Position',
+              data: this.datas[8].short_change,
+              color: '#ff3333',
+              type: 'column'
+            },
+            {
+              name: 'Total Long Position',
+              data: this.datas[8].long_all,
+              color: '#0099ff',
+              type: 'line'
+            },
+            {
+              name: 'Total Short Position',
+              data: this.datas[8].short_all,
+              color: '#ff3333',
+              type: 'line'
+            },
+          ],
+          chart: {
+
+          },
+          strock: {
+            curve: 'stepline',
+            width: [1, 1,2,2],
+          },
+          title: {
+            text: this.datas[8].name,
+            style: {
+              fontFamily: 'Roboto',
+            },
+          },
+          xaxis: {
+            sorted: true,
+            categories: this.datas[8].categories,
+            labels: {
+              show: true,
+              style: {
+                fontSize: '10',
+              },
+            },
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          legend: {
+            show: true,
+          },
+        };
+
+        this.chartCOTNZD = {
+          series: [
+            {
+              name: 'Long Position',
+              data: this.datas[7].long_change,
+              color: '#0099ff',
+              type: 'column'
+            },
+            {
+              name: 'Short Position',
+              data: this.datas[7].short_change,
+              color: '#ff3333',
+              type: 'column'
+            },
+            {
+              name: 'Total Long Position',
+              data: this.datas[7].long_all,
+              color: '#0099ff',
+              type: 'line'
+            },
+            {
+              name: 'Total Short Position',
+              data: this.datas[7].short_all,
+              color: '#ff3333',
+              type: 'line'
+            },
+          ],
+          chart: {
+
+          },
+          strock: {
+            curve: 'stepline',
+            width: [1, 1,2,2],
+          },
+          title: {
+            text: this.datas[7].name,
+            style: {
+              fontFamily: 'Roboto',
+            },
+          },
+          xaxis: {
+            sorted: true,
+            categories: this.datas[7].categories,
+            labels: {
+              show: true,
+              style: {
+                fontSize: '10',
+              },
+            },
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          legend: {
+            show: true,
+          },
+        };
+
+        this.chartCOTVIX = {
+          series: [
+            {
+              name: 'Long Position',
+              data: this.datas[9].long_change,
+              color: '#0099ff',
+              type: 'column'
+            },
+            {
+              name: 'Short Position',
+              data: this.datas[9].short_change,
+              color: '#ff3333',
+              type: 'column'
+            },
+            {
+              name: 'Total Long Position',
+              data: this.datas[9].long_all,
+              color: '#0099ff',
+              type: 'line'
+            },
+            {
+              name: 'Total Short Position',
+              data: this.datas[9].short_all,
+              color: '#ff3333',
+              type: 'line'
+            },
+          ],
+          chart: {
+
+          },
+          strock: {
+            curve: 'stepline',
+            width: [1, 1,2,2],
+          },
+          title: {
+            text: this.datas[9].name,
+            style: {
+              fontFamily: 'Roboto',
+            },
+          },
+          xaxis: {
+            sorted: true,
+            categories: this.datas[9].categories,
             labels: {
               show: true,
               style: {

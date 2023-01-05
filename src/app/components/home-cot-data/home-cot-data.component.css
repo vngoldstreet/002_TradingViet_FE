@@ -1,0 +1,15 @@
+i.fa-chart-line {
+    animation: mymove2 1s infinite;
+}
+
+@keyframes mymove2 {
+    0% {
+        color: red;
+    }
+    50% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: blue;
+    }
+}

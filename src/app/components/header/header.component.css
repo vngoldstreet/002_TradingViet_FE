@@ -14,3 +14,11 @@ a.active {
     color: rgb(13, 110, 253) !important;
     /* font-weight: 500; */
 }
+
+.trending {
+    background-color: #E9EFFD;
+}
+
+.trending-title {
+    background-color: rgb(13, 110, 253) !important;
+}

@@ -1,0 +1,25 @@
+<div id="ea-news" class="">
+    <h2 class="fs-4 py-2">
+        <i class="fas fa-chart-line"></i> Phân tích báo cáo COT - CFTC
+        <span class="fs-8 fw-lighter">Cập nhật trực tiếp báo cáo COT - CFTC cho thị trường vàng và ngoại tệ</span>
+    </h2>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="fs-6 fw-normal text-dark">Báo cáo COT - USD</h3>
+            <div style="text-align:center">
+                <apx-chart [series]="chartCOTUSD.series" [chart]="chartCOTUSD.chart" [xaxis]="chartCOTUSD.xaxis" [yaxis]="chartCOTUSD.yaxis" [title]="chartCOTUSD.title" [stroke]="chartCOTUSD.strock" [dataLabels]="chartCOTUSD.dataLabels" [legend]="chartCOTUSD.legend"></apx-chart>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div id="chart" style="text-align:center">
+                <apx-chart [series]="chartGoldOptions.series" [chart]="chartGoldOptions.chart" [xaxis]="chartGoldOptions.xaxis" [yaxis]="chartGoldOptions.yaxis" [title]="chartGoldOptions.title" [stroke]="chartGoldOptions.strock" [dataLabels]="chartGoldOptions.dataLabels"
+                    [legend]="chartGoldOptions.legend"></apx-chart>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div style="text-align:center">
+                <apx-chart [series]="chartCOTVIX.series" [chart]="chartCOTVIX.chart" [xaxis]="chartCOTVIX.xaxis" [yaxis]="chartCOTVIX.yaxis" [title]="chartCOTVIX.title" [stroke]="chartCOTVIX.strock" [dataLabels]="chartCOTVIX.dataLabels" [legend]="chartCOTVIX.legend"></apx-chart>
+            </div>
+        </div>
+    </div>
+</div>

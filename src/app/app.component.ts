@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MetaService } from './metaset.service';
 
 declare var $ : any
 
@@ -9,7 +10,10 @@ declare var $ : any
 })
 export class AppComponent {
   title = '001_tradingviet';
-
+  constructor(private meta : MetaService) { }
+  ngOnInit(): void {
+    this.meta.updateTitle();
+  }
   
   
 }

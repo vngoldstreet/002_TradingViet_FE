@@ -64,3 +64,25 @@ export interface FedWatch {
     onemonth: Array<number>
 
 }
+
+
+export interface Contents {
+    title: string
+    descrip: string
+    image: string
+    url:string
+    content:string
+    created_at:string
+    type:string
+    viewer:string
+    keyword:string
+}
+
+export interface Previews {
+    title: string
+    descrip: string
+    thumb: string
+    url:string
+    viewer:number
+    created_at:string
+}

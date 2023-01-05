@@ -17,7 +17,7 @@
     overflow: hidden;
 }
 
-.card-img-overlay-option{
+.card-img-overlay-option {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -26,25 +26,27 @@
     border-radius: var(--bs-card-inner-border-radius);
 }
 
-.card-height{
+.card-height {
     min-height: 560px;
     max-height: 560px;
     object-fit: cover;
 }
-.card-height-2{
+
+.card-height-2 {
     min-height: 275px;
     max-height: 275px;
     object-fit: cover;
 }
 
-.align-between{
-    align-content:space-between;
+.align-between {
+    align-content: space-between;
 }
 
-.card img{
+.card img {
+    cursor: pointer;
     transition: transform ease-in-out 1s;
 }
 
-.card img:hover{
+.card img:hover {
     transform: scale(1.1);
 }

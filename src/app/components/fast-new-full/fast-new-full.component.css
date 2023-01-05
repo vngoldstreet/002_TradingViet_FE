@@ -1,0 +1,36 @@
+#fast-news {
+    /* max-height: 700px; */
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+i.fa-paper-plane {
+    animation: mymove 1s infinite;
+}
+
+@keyframes mymove {
+    0% {
+        color: red;
+    }
+    50% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: blue;
+    }
+}
+
+li {
+    cursor: pointer;
+}

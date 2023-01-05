@@ -19,6 +19,13 @@ import { OpinionComponent } from './components/opinion/opinion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BankRateComponent } from './components/bank-rate/bank-rate.component';
 import { WebsocketService } from './websocket.service';
+import { HomeCotDataComponent } from './components/home-cot-data/home-cot-data.component';
+import { CotCftcComponent } from './cot-cftc/cot-cftc.component';
+import { ExpertIndicatorComponent } from './expert-indicator/expert-indicator.component';
+import { IndicatorsComponent } from './components/indicators/indicators.component';
+import { CommonNewsComponent } from './common-news/common-news.component';
+import { FastNewFullComponent } from './components/fast-new-full/fast-new-full.component';
+import { NewDetailComponent } from './new-detail/new-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,14 @@ import { WebsocketService } from './websocket.service';
     ChartFedComponent,
     ChartCotComponent,
     OpinionComponent,
-    BankRateComponent
+    BankRateComponent,
+    HomeCotDataComponent,
+    CotCftcComponent,
+    ExpertIndicatorComponent,
+    IndicatorsComponent,
+    CommonNewsComponent,
+    FastNewFullComponent,
+    NewDetailComponent
   ],
   imports: [
     BrowserModule,
