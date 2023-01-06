@@ -15,11 +15,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of datas;index as i">
-                <td class="fs-8">{{item.name}}
-                    <!-- <br> -->
-                    <!-- <span class="fw-lighter ms-1">{{item.friendly}}</span> -->
-                </td>
+            <tr *ngFor="let item of datas">
+                <td class="fs-8">{{item.name}}</td>
                 <td class="fs-8 text-center {{item.current>=item.previous?'text-primary':'text-danger'}}">{{item.current | number:'0.2-2'}}%</td>
                 <td class="fs-8 text-center {{item.current>=item.previous?'text-primary':'text-danger'}}">{{item.previous | number:'0.2-2'}}%</td>
                 <td class="fs-8 text-end">{{item.date | date:'dd/MM/YYYY'}}</td>

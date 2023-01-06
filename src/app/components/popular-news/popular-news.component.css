@@ -23,7 +23,9 @@
     bottom: 0;
     left: 0;
     padding: var(--bs-card-img-overlay-padding);
-    border-radius: var(--bs-card-inner-border-radius);
+    border-bottom-left-radius: var(--bs-card-inner-border-radius);
+    border-bottom-right-radius: var(--bs-card-inner-border-radius);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .card-height {
@@ -44,6 +46,8 @@
 
 .card img {
     cursor: pointer;
+    min-height: 560px;
+    object-fit: cover;
     transition: transform ease-in-out 1s;
 }
 

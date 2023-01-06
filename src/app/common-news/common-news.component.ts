@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Contents } from '../interface';
+import { Websocket2 } from '../socket2.service';
+import { WebsocketService } from '../websocket.service';
 
 @Component({
   selector: 'app-common-news',
@@ -10,6 +13,6 @@ export class CommonNewsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

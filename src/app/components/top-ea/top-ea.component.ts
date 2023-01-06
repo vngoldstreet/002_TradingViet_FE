@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ExpertAdvisor, News } from 'src/app/interface';
+import { ExpertAdvisor, Indicator, News } from 'src/app/interface';
 import { WebsocketService } from 'src/app/websocket.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-top-ea',
@@ -14,17 +15,19 @@ export class TopEaComponent implements OnInit {
   ngOnInit(): void {
     this.getPrices()
   }
-
+  time_stamp !: string
   getPrices() {
-    let url = "wss://portal-mql.tradingviet.com/ws"
+    let url = environment.apiRobot
     this.webSocketService.connect(url)
       .subscribe(evt => {
+        console.log(evt.data)
         let jsonObj = JSON.parse(evt.data)
-        // console.log(jsonObj)
-        this.robots = jsonObj
+        this.time_stamp = new Date().toString()
+        this.robots = jsonObj.DataStreamEAs
+        this.indicators = jsonObj.DataStreamIndis
       });
   }
 
   robots: Array<ExpertAdvisor> = []
-
+  indicators : Array<Indicator> = []
 }

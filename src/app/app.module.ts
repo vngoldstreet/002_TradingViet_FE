@@ -26,6 +26,7 @@ import { IndicatorsComponent } from './components/indicators/indicators.componen
 import { CommonNewsComponent } from './common-news/common-news.component';
 import { FastNewFullComponent } from './components/fast-new-full/fast-new-full.component';
 import { NewDetailComponent } from './new-detail/new-detail.component';
+import { Websocket2 } from './socket2.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { NewDetailComponent } from './new-detail/new-detail.component';
     NgApexchartsModule,
     HttpClientModule,
   ],
-  providers: [WebsocketService],
+  providers: [WebsocketService,Websocket2],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

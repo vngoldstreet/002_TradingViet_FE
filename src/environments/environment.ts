@@ -4,14 +4,18 @@
 
 export const environment = {
   production: false,
-  apiURL: "https://portal-data.tradingviet.com/public/",
-  getChartDatas: "getchart",
-  getFedWatch: "fedwatch",
-  getBankRate: "bankrate",
+  // apiURL: "https://portal-data.tradingviet.com/public/",
+  apiURL: 'http://localhost:8081/public',
+  getChartDatas: "/getchart",
+  getFedWatch: "/fedwatch",
+  getBankRate: "/bankrate",
 
-  apiUrlG: 'https://api.bacsiungthu.net',
-  apiGetListData: '/api/bsut/getlistdata',
-  apiGetSlider: '/api/bsut/slider',
-  apiGetImage: '/api/bsut/image/',
-  apiExaminationschedules: '/api/bsut/examinationschedules',
+  apiUrlG: 'http://localhost:8804/public',
+  // apiUrlG: 'https://portal-content.tradingviet.com',
+
+  apiGetListData: '/getlistdata',
+  apiGetImage: '/image/',
+
+  apiRobot :'ws://127.0.0.1:8802/ws',
+  apiNews :'ws://127.0.0.1:8804/public/ws',
 };

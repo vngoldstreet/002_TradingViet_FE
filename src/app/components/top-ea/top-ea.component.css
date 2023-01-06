@@ -19,6 +19,10 @@ i.fa-robot {
     animation: mymove2 1s infinite;
 }
 
+i.fa-brain {
+    animation: mymove2 1s infinite;
+}
+
 @keyframes mymove2 {
     0% {
         color: rgb(255, 0, 0);

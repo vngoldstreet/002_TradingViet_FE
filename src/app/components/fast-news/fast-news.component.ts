@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { News } from 'src/app/interface';
+import { Contents, News } from 'src/app/interface';
+import { Websocket2 } from 'src/app/socket2.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-fast-news',
@@ -7,48 +9,25 @@ import { News } from 'src/app/interface';
   styleUrls: ['./fast-news.component.css']
 })
 export class FastNewsComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private webSocketService: Websocket2) {
+    let url = environment.apiNews
+    this.webSocketService.connect(url)
+      .subscribe(evt => {
+        let jsonObj = JSON.parse(evt.data)
+        this.data_currents=jsonObj
+        if (this.datas[0].created_at != this.data_currents[0].created_at){
+          this.datas = jsonObj
+        }
+        this.time_stamp = new Date().toString()
+        localStorage.setItem("content",JSON.stringify(this.datas))
+      });
+   }
+  time_stamp !: string
   ngOnInit(): void {
+    this.datas = JSON.parse(localStorage.getItem("content") || '{}')
+    this.time_stamp = this.datas[0].created_at
   }
 
-  fast_news : Array<News> = [
-    {
-      title:"The standard Lorem Ipsum passage, used since the 1500s. The standard Lorem Ipsum passage, used since the 1500s",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      time:"2022-12-05 14:22:11",
-      status:false,
-    },
-    {
-      title:"The standard Lorem Ipsum passage, used since the 1500s",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      time:"2022-12-05 14:22:11",
-      status:false,
-    },
-    {
-      title:"The standard Lorem Ipsum passage, used since the 1500s",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      time:"2022-12-05 14:22:11",
-      status:false,
-    },
-    {
-      title:"The standard Lorem Ipsum passage, used since the 1500s",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      time:"2022-12-05 14:22:11",
-      status:false,
-    },
-    {
-      title:"The standard Lorem Ipsum passage, used since the 1500s",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      time:"2022-12-05 14:22:11",
-      status:false,
-    },
-    {
-      title:"The standard Lorem Ipsum passage, used since the 1500s",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      time:"2022-12-05 14:22:11",
-      status:false,
-    },
-  ]
+  datas !: Array<Contents>
+  data_currents !: Array<Contents>
 }

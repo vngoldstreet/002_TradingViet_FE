@@ -3,31 +3,45 @@ body {
     margin: 0;
 }
 
-.fs-7{
+.fs-7 {
     font-size: 0.95rem;
 }
-.fs-8{
+
+.fs-8 {
     font-size: 0.9rem;
 }
-.fs-9{
-  font-size: 0.85rem;
+
+.fs-9 {
+    font-size: 0.85rem;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
+
 /* width */
+
 ::-webkit-scrollbar {
     width: 0px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
     background: rgb(255, 204, 204);
     border-radius: 10px;
-  }
+}
+
+.content-detail img {
+    width: 100% !important;
+}

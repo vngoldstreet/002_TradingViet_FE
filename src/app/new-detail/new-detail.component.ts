@@ -42,7 +42,7 @@ export class NewDetailComponent implements OnInit {
     let urlres = this.route.snapshot.paramMap.get('url');
     var re = /tin-tuc/gi;
     var str = String(urlres);
-    str.replace(re, '');
+    str.replace(re, 'public/');
     if (urlres) {
       let urlQuerry = environment.apiUrlG + '/' + urlres;
       this.http.get<any>(urlQuerry).subscribe(

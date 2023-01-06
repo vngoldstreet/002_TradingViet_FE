@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
 })
 export class BankRateComponent implements OnInit {
 
-  datas !: Array<BankRates>
+  public datas !: Array<BankRates>
+
   constructor(http: HttpClient) {
     http.get<any>(environment.apiURL + environment.getBankRate).subscribe(res => {
       this.datas = res.data

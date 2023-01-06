@@ -32,6 +32,11 @@ export interface ExpertAdvisor {
     id: number
 }
 
+export interface Indicator {
+    name: string
+    data: number
+
+}
 
 export interface ImageShows {
     title: string
@@ -65,7 +70,6 @@ export interface FedWatch {
 
 }
 
-
 export interface Contents {
     title: string
     descrip: string
@@ -86,3 +90,5 @@ export interface Previews {
     viewer:number
     created_at:string
 }
+
+
