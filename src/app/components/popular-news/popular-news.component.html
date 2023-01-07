@@ -5,7 +5,8 @@
                 <img src="{{url_image+data_1.url}}" class="card-img" alt="{{data_1.title}}">
                 <span class="card-featured" title="Featured post"><i class="fas fa-star"></i></span>
                 <div class="card-img-overlay-option">
-                    <span class="tag p-1 rounded bg-danger me-1">#Trending</span><span class="tag p-1 rounded bg-warning me-1">#Xem nhiều</span>
+                    <span class="tag p-1 rounded bg-danger me-1">#Trending</span><span
+                        class="tag p-1 rounded bg-warning me-1">#Xem nhiều</span>
                     <h5 class="card-title mt-2">{{data_1.title}}</h5>
                     <p class="card-text">{{data_1.descrip | slice:0:80}}...</p>
                     <p class="card-text"><small>{{data_1.created_at | date:'dd/MM/YYYY HH:mm:ss'}}</small></p>

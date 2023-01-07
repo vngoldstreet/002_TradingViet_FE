@@ -11,7 +11,7 @@ const routes: Routes = [
     path: '',
     component: HomepageComponent,
     data: {
-      title: 'HomepageComponent',
+      title: 'TradingViet - Trang chủ',
       title_element: 'HomepageComponent',
       description:
         'HomepageComponent',
@@ -26,7 +26,7 @@ const routes: Routes = [
     path: 'bao-cao-cot-cftc',
     component: CotCftcComponent,
     data: {
-      title: 'CotCftcComponent',
+      title: 'TradingViet - Báo cáo COT (CFTC)',
       title_element: 'CotCftcComponent',
       description:
         'CotCftcComponent',
@@ -41,7 +41,7 @@ const routes: Routes = [
     path: 'expert-advisor-indicator',
     component: ExpertIndicatorComponent,
     data: {
-      title: 'ExpertIndicatorComponent',
+      title: 'TradingViet - Expert Advisort & Indicators',
       title_element: 'ExpertIndicatorComponent',
       description:
         'ExpertIndicatorComponent',
@@ -56,7 +56,7 @@ const routes: Routes = [
     path: 'tin-tuc',
     component: CommonNewsComponent,
     data: {
-      title: 'CommonNewsComponent',
+      title: 'TradingViet - Tin tức',
       title_element: 'CommonNewsComponent',
       description:
         'CommonNewsComponent',
@@ -74,7 +74,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+  })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

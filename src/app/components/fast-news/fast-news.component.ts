@@ -14,20 +14,36 @@ export class FastNewsComponent implements OnInit {
     this.webSocketService.connect(url)
       .subscribe(evt => {
         let jsonObj = JSON.parse(evt.data)
-        this.data_currents=jsonObj
-        if (this.datas[0].created_at != this.data_currents[0].created_at){
-          this.datas = jsonObj
-        }
+        // console.log(jsonObj)
+        this.data_currents = jsonObj.FastNews
         this.time_stamp = new Date().toString()
-        localStorage.setItem("content",JSON.stringify(this.datas))
+        if (this.datas[0].title != this.data_currents[0].title) {
+          this.datas = this.data_currents
+        }
       });
-   }
-  time_stamp !: string
-  ngOnInit(): void {
-    this.datas = JSON.parse(localStorage.getItem("content") || '{}')
-    this.time_stamp = this.datas[0].created_at
   }
 
-  datas !: Array<Contents>
-  data_currents !: Array<Contents>
+  time_stamp !: string
+  ngOnInit(): void {
+    this.datas = this.data_currents
+  }
+
+  datas!: Array<Contents>
+  data_currents: Array<Contents> = [{
+    title: "",
+    descrip: "",
+    image: "",
+    friendly_url: "",
+    content: "",
+    created_at: "",
+    type: "",
+    viewer: "",
+    keyword: "",
+    deleted: false
+  },];
+
+  SetString(des: string) {
+    let text = des.length > 320 ? '...' : ''
+    return des.slice(0, 320) + text
+  }
 }

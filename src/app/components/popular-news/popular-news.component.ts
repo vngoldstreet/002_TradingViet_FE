@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Contents } from 'src/app/interface';
+import { Contents, PopularNews } from 'src/app/interface';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./popular-news.component.css'],
 })
 export class PopularNewsComponent implements OnInit {
-  data_1: Contents = {
+  data_1: PopularNews = {
     title: '',
     descrip: '',
     image: '',
@@ -20,45 +20,51 @@ export class PopularNewsComponent implements OnInit {
     type: '',
     viewer: '',
     keyword: '',
-  };
-  data_2: Contents = {
-    title: '',
-    descrip: '',
-    image: '',
-    url: '',
-    content: '',
-    created_at: '',
-    type: '',
-    viewer: '',
-    keyword: '',
-  };
-  data_3: Contents = {
-    title: '',
-    descrip: '',
-    image: '',
-    url: '',
-    content: '',
-    created_at: '',
-    type: '',
-    viewer: '',
-    keyword: '',
-  };
-  data_4: Contents = {
-    title: '',
-    descrip: '',
-    image: '',
-    url: '',
-    content: '',
-    created_at: '',
-    type: '',
-    viewer: '',
-    keyword: '',
+    deleted: false
   };
 
-  url_image : string = environment.apiUrlG + environment.apiGetImage;
-  
+  data_2: PopularNews = {
+    title: '',
+    descrip: '',
+    image: '',
+    url: '',
+    content: '',
+    created_at: '',
+    type: '',
+    viewer: '',
+    keyword: '',
+    deleted: false
+  };
+
+  data_3: PopularNews = {
+    title: '',
+    descrip: '',
+    image: '',
+    url: '',
+    content: '',
+    created_at: '',
+    type: '',
+    viewer: '',
+    keyword: '',
+    deleted: false
+  };
+  data_4: PopularNews = {
+    title: '',
+    descrip: '',
+    image: '',
+    url: '',
+    content: '',
+    created_at: '',
+    type: '',
+    viewer: '',
+    keyword: '',
+    deleted: false
+  };
+
+  url_image: string = environment.apiUrlG + environment.apiGetImage;
+
   constructor(private http: HttpClient, private router: Router) {
-    http.get<any>(environment.apiUrlG + environment.apiGetListData +'?owner=bacsiungthu&type=popular-news&length=4').subscribe(
+    http.get<any>(environment.apiUrlG + environment.apiGetListData + '?owner=tradingviet&type=popular-news&length=4').subscribe(
       (res) => {
         this.data_1 = res.data[0];
         this.data_2 = res.data[1];
@@ -74,6 +80,6 @@ export class PopularNewsComponent implements OnInit {
   ngOnInit(): void {
     // console.log(this.url_image)
   }
-  
+
 
 }

@@ -20,7 +20,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/001_tradingviet",
+                        "outputPath": "dist/001_tradingviet/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -105,6 +105,64 @@
 
                         ]
                     }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/001_tradingviet/server",
+                        "main": "server.ts",
+                        "tsConfig": "tsconfig.server.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media",
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ]
+                        },
+                        "development": {
+                            "optimization": false,
+                            "sourceMap": true,
+                            "extractLicenses": false
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve-ssr": {
+                    "builder": "@nguniversal/builders:ssr-dev-server",
+                    "configurations": {
+                        "development": {
+                            "browserTarget": "001_tradingviet:build:development",
+                            "serverTarget": "001_tradingviet:server:development"
+                        },
+                        "production": {
+                            "browserTarget": "001_tradingviet:build:production",
+                            "serverTarget": "001_tradingviet:server:production"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "prerender": {
+                    "builder": "@nguniversal/builders:prerender",
+                    "options": {
+                        "routes": [
+                            "/"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "001_tradingviet:build:production",
+                            "serverTarget": "001_tradingviet:server:production"
+                        },
+                        "development": {
+                            "browserTarget": "001_tradingviet:build:development",
+                            "serverTarget": "001_tradingviet:server:development"
+                        }
+                    },
+                    "defaultConfiguration": "production"
                 }
             }
         }

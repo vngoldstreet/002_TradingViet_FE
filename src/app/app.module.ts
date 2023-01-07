@@ -27,6 +27,8 @@ import { CommonNewsComponent } from './common-news/common-news.component';
 import { FastNewFullComponent } from './components/fast-new-full/fast-new-full.component';
 import { NewDetailComponent } from './new-detail/new-detail.component';
 import { Websocket2 } from './socket2.service';
+import { EconomicCalendarComponent } from './components/economic-calendar/economic-calendar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -49,16 +51,17 @@ import { Websocket2 } from './socket2.service';
     IndicatorsComponent,
     CommonNewsComponent,
     FastNewFullComponent,
-    NewDetailComponent
+    NewDetailComponent,
+    EconomicCalendarComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     NgApexchartsModule,
     HttpClientModule,
   ],
-  providers: [WebsocketService,Websocket2],
+  providers: [WebsocketService, Websocket2],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

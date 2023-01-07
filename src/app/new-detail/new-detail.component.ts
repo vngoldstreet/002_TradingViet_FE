@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { Contents, Previews } from '../interface';
+import { Contents, PopularNews, Previews } from '../interface';
 
 @Component({
   selector: 'app-new-detail',
@@ -17,14 +17,14 @@ export class NewDetailComponent implements OnInit {
     private http: HttpClient,
     private titleService: Title,
     private metaTag: Meta
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getDetails();
     this.onLoadDatas();
   }
 
-  data: Contents = {
+  data: PopularNews = {
     title: '',
     descrip: '',
     image: '',
@@ -34,6 +34,7 @@ export class NewDetailComponent implements OnInit {
     type: '',
     viewer: '',
     keyword: '',
+    deleted: false
   };
 
   apiUrl: string = environment.apiUrlG + environment.apiGetImage;
@@ -95,26 +96,27 @@ export class NewDetailComponent implements OnInit {
   data_mores!: Array<Previews>;
 
   onLoadDatas() {
-    let url =
-      environment.apiUrlG +
-      environment.apiGetListData +
-      '?owner=tradingviet&type=' +
-      this.type +
-      '&length=' +
-      this.length;
-    this.http.get<any>(url).subscribe(
-      (data) => {
-        this.data_mores = data.data;
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+
+    // let url =
+    //   environment.apiUrlG +
+    //   environment.apiGetListData +
+    //   '?owner=tradingviet&type=' +
+    //   this.type +
+    //   '&length=' +
+    //   this.length;
+    // this.http.get<any>(url).subscribe(
+    //   (data) => {
+    //     this.data_mores = data.data;
+    //   },
+    //   (err) => {
+    //     console.log(err);
+    //   }
+    // );
 
     let url2 =
       environment.apiUrlG +
       environment.apiGetListData +
-      '?owner=bacsiungthu&type=' +
+      '?owner=tradingviet&type=' +
       this.type +
       '&length=' +
       this.length;

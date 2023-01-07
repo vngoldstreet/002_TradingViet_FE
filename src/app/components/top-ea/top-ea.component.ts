@@ -20,7 +20,7 @@ export class TopEaComponent implements OnInit {
     let url = environment.apiRobot
     this.webSocketService.connect(url)
       .subscribe(evt => {
-        console.log(evt.data)
+        // console.log(evt.data)
         let jsonObj = JSON.parse(evt.data)
         this.time_stamp = new Date().toString()
         this.robots = jsonObj.DataStreamEAs
@@ -29,5 +29,5 @@ export class TopEaComponent implements OnInit {
   }
 
   robots: Array<ExpertAdvisor> = []
-  indicators : Array<Indicator> = []
+  indicators: Array<Indicator> = []
 }

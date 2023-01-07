@@ -74,21 +74,44 @@ export interface Contents {
     title: string
     descrip: string
     image: string
-    url:string
-    content:string
-    created_at:string
-    type:string
-    viewer:string
-    keyword:string
+    friendly_url: string
+    content: string
+    created_at: string
+    type: string
+    viewer: string
+    keyword: string
+    deleted: boolean
+}
+
+export interface PopularNews {
+    title: string
+    descrip: string
+    image: string
+    url: string
+    content: string
+    created_at: string
+    type: string
+    viewer: string
+    keyword: string
+    deleted: boolean
 }
 
 export interface Previews {
     title: string
     descrip: string
     thumb: string
-    url:string
-    viewer:number
-    created_at:string
+    url: string
+    viewer: number
+    created_at: string
+}
+
+export interface MetalMines {
+    title: string
+    country: string
+    date: string
+    impact: string
+    forecast: string
+    previous: string
 }
 
 

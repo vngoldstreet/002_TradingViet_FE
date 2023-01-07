@@ -1,5 +1,6 @@
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0" nonce="rAGicB5Z"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0"
+    nonce="rAGicB5Z"></script>
 <div class="container">
     <div class="content-detail">
         <div class="row">
@@ -9,18 +10,23 @@
                         <span class="sr-only">Loading...</span>
                     </div>
                 </div>
+
                 <div *ngIf="loading">
-                    <h1 title="{{data.title}} - TradingViet" class="fs-3 fw-bold text-dark">{{data.title + ' - TradingViet'}}
+                    <h1 title="{{data.title}} - TradingViet" class="fs-3 fw-bold text-dark">{{data.title + '
+                        -TradingViet'}}
                     </h1>
                     <span class=" time-zone fs-8 fw-lighter ">{{data.created_at| date :'dd/MM/YYYY HH:mm'}}</span>
-                    <h2 class="font-size-title fs-6 fw-bold mt-1 "> <a *ngIf="loading " href="https://tradingviet.com " target="_blank ">TradingViet</a> - {{data.descrip}}
+                    <h2 class="font-size-title fs-6 fw-bold mt-1 "> <a *ngIf="loading " href="https://tradingviet.com "
+                            target="_blank ">TradingViet</a> - {{data.descrip}}
                     </h2>
-                    <div *ngIf="data.url ">
-                        <img class="detail-img-news w-100 " src="{{apiUrl}}{{data.url}} " alt="{{data.title}}-TradingViet " title="{{data.title}}-TradingViet ">
-                    </div>
+                    <!-- <div *ngIf="data.url">
+                        <img class="detail-img-news w-100 " src="{{apiUrl}}{{data.url}} "
+                            alt="{{data.title}}-TradingViet " title="{{data.title}}-TradingViet ">
+                    </div> -->
                     <div style="text-align: justify;" class="font-size-content" [innerHTML]="data.content ">
                     </div>
                 </div>
+
                 <div class="mt-5 ">
                     <h2 class="fs-4 py-2 ">
                         Tin tức liên quan
@@ -28,30 +34,35 @@
                     <div class="row ">
                         <a href="tin-tuc/{{item.url}} " class="col-lg-4 mt-3 " *ngFor="let item of hot_news ">
                             <div class="card w-100 " style="width: 18rem; ">
-                                <img src="{{apiUrl}}{{item.url}} " class="card-img-top w-100 " alt="{{item.title}} " title="{{item.title}} " loading="lazy ">
+                                <img src="{{apiUrl}}{{item.url}} " class="card-img-top w-100 " alt="{{item.title}} "
+                                    title="{{item.title}} " loading="lazy ">
                                 <div class="card-body ">
                                     <h3 class="med-color p-0 m-0 fw-bold fs-5 ">{{item.title | slice:0:50}}...</h3>
                                     <p class="fs-6 mt-1 text-dark ">{{item.descrip| slice:0:100}}...</p>
                                     <div class="d-flex justify-content-between ">
-                                        <span class="fw-lighter text-dark "><svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 "
-                                  fill="currentColor " class="bi bi-eye-fill fw-lighter " viewBox="0 0 16 16 ">
-                                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z " />
-                                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z " />
-                                </svg> {{item.viewer}}</span>
-                                        <span class="fw-lighter text-dark ">{{item.created_at | date:'dd/mm/YYYY H:mm'}}</span>
+                                        <span class="fw-lighter text-dark "><svg xmlns="http://www.w3.org/2000/svg "
+                                                width="16 " height="16 " fill="currentColor "
+                                                class="bi bi-eye-fill fw-lighter " viewBox="0 0 16 16 ">
+                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z " />
+                                                <path
+                                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z " />
+                                            </svg> {{item.viewer}}</span>
+                                        <span class="fw-lighter text-dark ">{{item.created_at |
+                                            date:'dd/mm/YYYYH:mm'}}</span>
                                     </div>
                                 </div>
                             </div>
                         </a>
-                        <!-- <button class="btn btn-warning-bs mt-5 " type="submit " (click)="onLoadmore() ">Xem thêm</button> -->
+                        <button class="btn btn-warning-bs mt-5 " type="submit " (click)="onLoadmore() ">Xemthêm</button>
                     </div>
                 </div>
 
             </div>
 
             <div class="col-lg-4 ">
-                <app-fast-news></app-fast-news>
                 <app-top-ea></app-top-ea>
+                <app-fast-news></app-fast-news>
+                <app-bank-rate></app-bank-rate>
             </div>
         </div>
     </div>

@@ -1,16 +1,21 @@
 <div id="fast-news" class="">
-    <h2 class="fs-4 py-2">
+    <h2 class="fs-4">
         <i class="far fa-paper-plane"></i> <span class="ms-2">Tin tức cập nhật</span><br>
         <div class="mt-2">
-            <span class="fs-8 fw-lighter">Cập nhật, phân tích các tin tức trực tiếp ảnh hưởng tới thị trường Vàng, ngoại tệ,...</span>
+            <span class="fs-8 fw-lighter">Cập nhật, phân tích các tin tức trực tiếp ảnh hưởng tới thị trường Vàng, ngoại
+                tệ,...</span>
         </div>
     </h2>
     <div class="content-new">
         <span class="fs-7">Updated: {{time_stamp | date:'dd/MM/YYYY HH:mm:ss'}}</span>
         <ul>
             <li class="py-2 {{i + 1 < datas.length?'border-bottom':''}}" *ngFor="let item of datas;index as i">
-                <h2 class="fs-6 lh-lg m-0 p-0 fw-normal text-primary-emphasis"><i class="far fa-bell me-2"></i>{{item.title | slice:0:80}}{{item.title.length>80?'...':''}}</h2>
-                <span class="m-0 p-0 fw-light fs-8">{{item.created_at | date:'dd/M/YYYY hh:mm:ss'}} <span *ngIf="item.content" class="fw-normal" [innerHTML]="item.content"></span></span>
+                <h2 class="fs-6 lh-lg m-0 p-0 fw-bold text-primary-emphasis"><i
+                        class="far fa-bell me-2"></i>{{item.title}}</h2>
+                <p class="m-0 p-0 fw-light fs-8">{{item.created_at | date:'dd/M/YYYY hh:mm:ss'}}
+                </p>
+                <!-- <p *ngIf="item.descrip" class="fw-normal">{{item.descrip}}</p> -->
+                <p class="fw-normal" [innerText]="item.descrip"></p>
             </li>
         </ul>
     </div>

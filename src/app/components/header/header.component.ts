@@ -9,7 +9,7 @@ declare var $: any;
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  constructor() { }
   username!: string | null;
   hotnews!: string | null;
   menus: Array<Menus> = [
@@ -37,7 +37,4 @@ export class HeaderComponent implements OnInit {
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
   }
 
-  ShowAlert(text: string){
-    window.alert(text)
-  }
 }

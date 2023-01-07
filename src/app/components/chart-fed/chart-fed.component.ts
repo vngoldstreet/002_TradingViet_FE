@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Injectable, Input, OnInit, ViewChild } from '@angular/core';
 import { FedWatch, ImageShows } from 'src/app/interface';
 import {
   ChartComponent,
@@ -32,6 +32,7 @@ export type ChartOptions = {
   styleUrls: ['./chart-fed.component.css'],
 })
 
+@Injectable()
 export class ChartFedComponent implements OnInit {
   @ViewChild('chart') chart!: ChartComponent;
   public chartfed: Partial<ChartOptions> | any;

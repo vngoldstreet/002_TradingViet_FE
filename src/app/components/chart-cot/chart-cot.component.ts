@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import { ChartDatas } from 'src/app/interface';
 import { environment } from 'src/environments/environment';
 import {
@@ -25,12 +25,14 @@ export type ChartOptions = {
   legend: ApexLegend;
 };
 
+
 @Component({
   selector: 'app-chart-cot',
   templateUrl: './chart-cot.component.html',
   styleUrls: ['./chart-cot.component.css'],
 })
 
+@Injectable()
 export class ChartCotComponent implements OnInit {
   public chartGoldOptions: Partial<ChartOptions> | any;
   public chartUSDOptions: Partial<ChartOptions> | any;
