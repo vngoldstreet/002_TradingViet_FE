@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Contents, News } from 'src/app/interface';
 import { Websocket2 } from 'src/app/socket2.service';
+
 import { environment } from 'src/environments/environment';
 
 @Component({

@@ -1,4 +1,4 @@
-import { Component, Injectable, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, Injectable, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FedWatch, ImageShows } from 'src/app/interface';
 import {
   ChartComponent,
@@ -14,6 +14,7 @@ import {
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { DOCUMENT } from '@angular/common';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -40,7 +41,12 @@ export class ChartFedComponent implements OnInit {
   localurl: string = location.origin;
   datas !: FedWatch
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private _renderer2: Renderer2,
+    @Inject(DOCUMENT) private _document: Document) {
+    
+  }
+
+  ngOnInit(): void {
     this.http.get<any>(environment.apiURL + environment.getFedWatch).subscribe(res => {
       this.datas = res.data
       // console.log(this.datas)
@@ -92,13 +98,18 @@ export class ChartFedComponent implements OnInit {
           show: false
         }
       };
+
+      let script = this._renderer2.createElement('script');
+        this._renderer2.appendChild(this._document.body, script);
+        script.text = 
+        `
+        var options_chartfed = ${JSON.stringify(this.chartfed)}
+        var chartFED = new ApexCharts(document.querySelector("#chartFED"), options_chartfed);
+        chartFED.render();
+        `
     }, error => {
       console.log(error)
     })
-  }
-
-  ngOnInit(): void {
-
   }
 
   image: ImageShows = {

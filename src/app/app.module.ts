@@ -13,7 +13,7 @@ import { PopularNewsComponent } from './components/popular-news/popular-news.com
 import { TopEaComponent } from './components/top-ea/top-ea.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChartFedComponent } from './components/chart-fed/chart-fed.component';
-import { NgApexchartsModule } from 'ng-apexcharts';
+
 import { ChartCotComponent } from './components/chart-cot/chart-cot.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,9 +26,9 @@ import { IndicatorsComponent } from './components/indicators/indicators.componen
 import { CommonNewsComponent } from './common-news/common-news.component';
 import { FastNewFullComponent } from './components/fast-new-full/fast-new-full.component';
 import { NewDetailComponent } from './new-detail/new-detail.component';
-import { Websocket2 } from './socket2.service';
 import { EconomicCalendarComponent } from './components/economic-calendar/economic-calendar.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { Websocket2 } from './socket2.service';
 
 @NgModule({
   declarations: [
@@ -56,12 +56,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    RouterModule,
     AppRoutingModule,
     FormsModule,
-    NgApexchartsModule,
     HttpClientModule,
   ],
-  providers: [WebsocketService, Websocket2],
+  providers: [WebsocketService,Websocket2],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

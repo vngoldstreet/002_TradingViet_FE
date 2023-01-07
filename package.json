@@ -37,6 +37,7 @@
     "ng-apexcharts": "^1.7.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "ws": "^8.11.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

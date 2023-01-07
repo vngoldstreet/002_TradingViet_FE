@@ -34,6 +34,14 @@
     object-fit: cover;
 }
 
+@media only screen and (max-width: 600px) {
+    .card-height {
+        min-height: max-content;
+        max-height: max-content;
+        object-fit: cover;
+    }
+  }
+
 .card-height-2 {
     min-height: 275px;
     max-height: 275px;

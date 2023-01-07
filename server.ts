@@ -9,11 +9,6 @@ import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
 import 'localstorage-polyfill';
-import { createWindow } from 'domino';
-
-global['localStorage'] = localStorage
-global['window'] = window
-global['document'] = window.document
 
 import { AppServerModule } from './src/main.server';
 
